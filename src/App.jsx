@@ -6,16 +6,16 @@ import { getFirestore, doc, setDoc, getDoc, onSnapshot, updateDoc, collection, a
 // --- !!! IMPORTANT !!! ---
 // This is a placeholder for the Firebase config.
 // In a real environment, this would be provided securely.
-const firebaseConfigString = typeof __firebase_config !== 'undefined' ? __firebase_config : JSON.stringify({
-    apiKey: "AIzaSyAI-0lpgoYcXcgrlqHF_mIF9IqiaRqw1bY",
-    authDomain: "imposter-game-f4e36.firebaseapp.com",
-    projectId: "imposter-game-f4e36",
-    storageBucket: "imposter-game-f4e36.appspot.com",
-    messagingSenderId: "622941194586",
-    appId: "1:622941194586:web:376be19c5d9de2e5eccb63",
-    measurementId: "G-W7XJKDDCZK"
-});
-const firebaseConfig = JSON.parse(firebaseConfigString);
+const firebaseConfig = {
+    apiKey: import.meta.env.VITE_API_KEY,
+    authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_APP_ID,
+    measurementId: import.meta.env.VITE_MEASUREMENT_ID
+};
+// ... the rest of your code
 
 // --- Firebase Initialization ---
 const app = initializeApp(firebaseConfig);
